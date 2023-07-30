@@ -25,7 +25,7 @@
 git clone https://github.com/Calylyli/Mindsporehrnet.git
 ```
 
-### 1. Flickr8k Dataset 
+### 1. Cityscapes Dataset 
 * 准备数据集  ([**cityscapes**](https://paperswithcode.com/dataset/cityscapes)).
 ```
 ├─ cityscapes                           # cityscapes数据集根目录
