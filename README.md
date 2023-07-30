@@ -26,15 +26,24 @@ git clone https://github.com/Calylyli/Mindsporehrnet.git
 ```
 
 ### 1. Flickr8k Dataset 
-* 准备数据集  ([**Flickr8k**](https://www.kaggle.com/shadabhussain/flickr8k)). 
-* 提取图片到**Images**文件夹，提取文本到**captions.txt**文件. 
-* 把**Images**and**captions.txt** 放到同一个文件夹（**flickr8k**）下 
-```angular2html
--- flickr8k
-    |-- Images
-      |-- 1000268201_693b08cb0e.jpg
-      |-- ......
-    |-- captions.txt
+* 准备数据集  ([**cityscapes**](https://paperswithcode.com/dataset/cityscapes)). 
+├─ cityscapes                           # cityscapes数据集根目录
+│   ├─ gtFine                           # 标签文件
+│   │   ├─ train                        # 训练标签文件
+│   │   │   └─ [city folders]
+│   │   │       └─ [label images]
+│   │   └─ val                          # 推理标签文件
+│   │       └─ [city folders]
+│   │           └─ [label images]
+│   ├─ leftImg8bit                      # 图像文件
+│   │   ├─ train                        # 训练图像文件
+│   │   │   └─ [city folders]
+│   │   │       └─ [images]
+│   │   └─ val                          # 推理图像文件
+│   │       └─ [city folders]
+│   │           └─ [images]
+│   ├─ train.lst                        # 训练样本列表
+│   └─ val.lst                          # 推理样本列表
 ```
 
 
@@ -51,7 +60,13 @@ python train.py
 python export.py --device_id [DEVICE_ID] --checkpoint_file [CKPT_PATH] --file_name [FILE_NAME] --file_format MINDIR --device_target Ascend --dataset [DATASET]
 ```
 
-### 3. 推理
+### 3. 评估
+* 运行如下代码 : 
+```bash
+sh scripts/run_eval.sh [DEVICE_ID] [DATASET_PATH] [CHECKPOINT_PATH]
+```
+
+### 4. 推理
 * 运行如下代码 : 
 ```bash
 sh scripts/ascend310_inference.sh [MINDIR_PATH] [DATA_PATH] [DEVICE_ID]
