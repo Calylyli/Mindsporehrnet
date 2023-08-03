@@ -75,5 +75,4 @@ sh scripts/ascend310_inference.sh [MINDIR_PATH] [DATA_PATH] [DEVICE_ID]
 
 
 ## References
-* **Link**: [Show and tell: A neural image caption generator](https://arxiv.org/abs/1411.4555)
-* **Link**: https://github.com/nalbert9/Image-Captioning
+* **Link**: [Deep High-Resolution Representation Learning for Visual Recognition](https://paperswithcode.com/paper/190807919)
